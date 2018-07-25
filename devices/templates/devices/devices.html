@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <table class="table table-hover">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Operating System</th>
+                <th scope="col">Location</th>
+                <th scope="col">Type</th>
+                <th scope="col">IP Address</th>
+                <th scope="col">IP Address 2</th>
+                <th scope="col">IP Address 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for d in devices %}
+            <tr>
+                <td scope="row">{{ d.id }}</td>l
+                <td scope="row">{{ d.device_name }}</td>
+                <td scope="row">{{ d.device_os }}</td>
+                <td scope="row">{{ d.device_location }}</td>
+                <td scope="row">{{ d.device_type }}</td>
+                <td scope="row">{{ d.house_lan_ip }}</td>
+                <td scope="row">{{ d.house_ip_type}}</td>
+                <td scope="row">{{ d.media_lan_ip }}</td>
+                <td scope="row">{{ d.media_ip_type}}</td>
+                <td scope="row">{{ d.hispeed_ip }}</td>
+            <td scope="row">{{ d.hispeed_ip_type}}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{% url 'devices:add_device' %}">Add new</a>
+{% endblock %}
+
+
