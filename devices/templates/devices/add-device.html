@@ -7,11 +7,64 @@
 
 {% block content %}
 
-    <form action="." method="post">
-        {% csrf_token %}
-        {{ add_form.as_p }}
-        <p><input type="submit" value="save"></p>
-    </form>
+    <div class="container">
+        <form action="." method="post" class="well horizontal">
+            {% csrf_token %}
+            <fieldset>
+                <legend>Add a device</legend>
+                <div class="form-group">
+                    <label for="{{ add_form.id_device_name }}">{{ add_form.device_name.label }}</label>
+                    {{ add_form.device_name }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ add_form.id_device_type }}">{{ add_form.device_type.label }}</label>
+                    {{ add_form.device_type }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ add_form.id_device_os }}">{{ add_form.device_os.label }}</label>
+                    {{ add_form.device_os }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ add_form.id_device_location }}">{{ add_form.device_location.label }}</label>
+                    {{ add_form.device_location }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ add_form.id_house_lan_ip }}">{{ add_form.house_lan_ip.label }}</label>
+                    {{ add_form.house_lan_ip }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ add_form.id_house_ip_type }}">{{ add_form.house_ip_type.label }}</label>
+                    {{ add_form.house_ip_type }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ add_form.id_media_lan_ip }}">{{ add_form.media_lan_ip.label }}</label>
+                    {{ add_form.media_lan_ip }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ add_form.id_media_ip_type }}">{{ add_form.media_ip_type.label }}</label>
+                    {{ add_form.media_ip_type }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ add_form.id_hispeed_ip }}">{{ add_form.hispeed_ip.label }}</label>
+                    {{ add_form.hispeed_ip }}
+                </div>
+                <div class="form-group">
+                    <label for="{{ add_form.id_hispeed_ip_type }}">{{ add_form.hispeed_ip_type.label }}</label>
+                    {{ add_form.hispeed_ip_type }}
+                </div>
+
+                <div class="form-group"><label for="" class="col-md-4 control-label"></label>
+
+                    <div class="col-md-4">
+                        <button class="btn btn-warning">Save </button>
+                    </div>
+                </div>
+
+            </fieldset>
+
+
+        </form>
+    </div>
 
 {% endblock %}
 
